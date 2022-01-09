@@ -1,0 +1,10 @@
+<h1>Promo List</h1>
+<ul>
+  <% @promos.each do |p| %>
+    <li>
+      <%= link_to p.name, p %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Promo', new_promo_path %>

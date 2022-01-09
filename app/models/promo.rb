@@ -1,3 +1,3 @@
-class Product < ApplicationRecord
+class Promo < ApplicationRecord
   validates :name, presence: true
 end

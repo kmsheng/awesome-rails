@@ -1,0 +1,7 @@
+<h1>Promo <%= @promo.id %></h1>
+<div>
+  name: <%= @promo.name %>
+</div>
+
+<%= link_to 'Edit', edit_promo_path(@promo) %>
+<%= link_to 'Back', promos_path %>
