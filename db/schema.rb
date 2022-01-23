@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_145025) do
+ActiveRecord::Schema.define(version: 2022_01_23_145318) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 2022_01_23_145025) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "books_users", id: false, charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.index ["book_id", "user_id"], name: "index_books_users_on_book_id_and_user_id"
+    t.index ["user_id", "book_id"], name: "index_books_users_on_user_id_and_book_id"
   end
 
   create_table "comments", charset: "utf8mb4", force: :cascade do |t|
