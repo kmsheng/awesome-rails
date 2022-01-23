@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_09_092037) do
+ActiveRecord::Schema.define(version: 2022_01_23_145025) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_01_09_092037) do
     t.text "metadata"
     t.string "service_name", null: false
     t.bigint "byte_size", null: false
-    t.string "checksum", null: false
+    t.string "checksum"
     t.integer "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
@@ -68,6 +68,12 @@ ActiveRecord::Schema.define(version: 2022_01_09_092037) do
     t.integer "created_at", null: false
     t.integer "updated_at", null: false
     t.string "name"
+  end
+
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+    t.string "nickname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
