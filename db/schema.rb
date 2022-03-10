@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_162224) do
+ActiveRecord::Schema.define(version: 2022_03_10_072810) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2022_01_23_162224) do
     t.integer "updated_at", null: false
     t.string "status"
     t.boolean "term"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "books", charset: "utf8mb4", force: :cascade do |t|
